@@ -11,7 +11,7 @@ def reconhecer_placa(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     plates = plate_cascade.detectMultiScale(
         gray,
-        scaleFactor=1.01,
+        scaleFactor=5,
         minNeighbors=1,
         minSize=(60,20)
     )
@@ -61,4 +61,4 @@ def main(video_path):
     cv2.destroyAllWindows()
 
 if __name__ == '__main__':
-    main('v2.mp4')
+    main('v3.mp4')
