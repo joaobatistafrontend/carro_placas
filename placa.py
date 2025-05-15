@@ -2,7 +2,7 @@ import cv2
 import pytesseract
 
 # Caso o executável não esteja no PATH usado pelo Python, ajuste aqui:
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
 # Carrega o cascade de placa (substitua pelo arquivo adequado ao seu país, se necessário)
 plate_cascade = cv2.CascadeClassifier('haarcascade_russian_plate_number.xml')
@@ -11,7 +11,7 @@ def reconhecer_placa(frame):
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     plates = plate_cascade.detectMultiScale(
         gray,
-        scaleFactor=1.01,
+        scaleFactor=1.04,
         minNeighbors=1,
         minSize=(60,20)
     )
