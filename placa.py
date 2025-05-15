@@ -2,8 +2,9 @@ import cv2
 import pytesseract
 
 # Caso o executável não esteja no PATH usado pelo Python, ajuste aqui:
-pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
 
+notbook = pytesseract.pytesseract.tesseract_cmd = '/usr/bin/tesseract'
+pc = pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 # Carrega o cascade de placa (substitua pelo arquivo adequado ao seu país, se necessário)
 plate_cascade = cv2.CascadeClassifier('haarcascade_russian_plate_number.xml')
 
